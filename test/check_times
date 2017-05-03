@@ -1,48 +1,56 @@
 #!/bin/sh
-cd /root
-echo "In /root"
-rm testFile
-sleep 1
-touch testFile
-echo "testFile created, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-touch testFile
-echo "testFile touched, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-echo test3 > testFile
-echo "testFile modified, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+if ["$1" == ""]; then
+        echo "USEAGE: check_times <testFileName>"
+else
+        cd /root
+        echo "In /root"
+        rm $1
+        sleep 1
+        echo "creating ($1)"
+        touch $1
+        echo "testFile created, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        touch $1
+        echo "testFile touched, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        echo test3 > $1
+        echo "testFile modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        rm $1
 
-cd /home
-echo "In /home"
-rm testFile
-sleep 1
-touch testFile
-echo "testFile created, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-touch testFile
-echo "testFile touched, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-echo test3 > testFile
-echo "testFile modified, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+        cd /home
+        echo "In /home"
+        rm $1
+        sleep 1
+        touch $1
+        echo "testFile created, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        touch $1
+        echo "testFile touched, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        echo test3 > $1
+        echo "testFile modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        rm $1
 
-cd /usr
-echo "In /usr"
-rm testFile
-sleep 1
-touch testFile
-echo "testFile created, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-touch testFile
-echo "testFile touched, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
-sleep 1
-echo test3 > testFile
-echo "testFile modified, times:"
-stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+        cd /usr
+        echo "In /usr"
+        rm $1
+        sleep 1
+        touch $1
+        echo "testFile created, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        touch $1
+        echo "testFile touched, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        echo test3 > $1
+        echo "testFile modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        rm $1
+fi

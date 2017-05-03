@@ -12,8 +12,7 @@
  *   update_times: update atime, ctime, and mtime
  *   rw_inode:	   read a disk block and extract an inode, or corresp. write
  *   dup_inode:	   indicate that someone else is using an inode table entry
- *   find_inode:   retrieve pointer to inode in inode cache
- *
+ *   find_inode:   retrieve pointer to inode in inode cache *
  */
 
 #include "fs.h"
@@ -434,7 +433,7 @@ int norm;			/* TRUE = do not swap bytes; FALSE = swap */
 	rip->i_gid     = (gid_t) conv2(norm,dip->d2_gid);
 	rip->i_size    = (off_t) conv4(norm,dip->d2_size);
 	rip->i_atime   = (time_t) conv4(norm,dip->d2_atime);
-	rip->i_ctime   = (time_t) conv4(norm,dip->d2_ctime);
+	//rip->i_ctime   = (time_t) conv4(norm,dip->d2_ctime);
 	rip->i_mtime   = (time_t) conv4(norm,dip->d2_mtime);
 	rip->i_ndzones = V2_NR_DZONES;
 	rip->i_nindirs = V2_INDIRECTS(rip->i_sp->s_block_size);
