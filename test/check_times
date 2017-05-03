@@ -1,0 +1,48 @@
+#!/bin/sh
+cd /root
+echo "In /root"
+rm testFile
+sleep 1
+touch testFile
+echo "testFile created, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+touch testFile
+echo "testFile touched, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+echo test3 > testFile
+echo "testFile modified, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+
+cd /home
+echo "In /home"
+rm testFile
+sleep 1
+touch testFile
+echo "testFile created, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+touch testFile
+echo "testFile touched, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+echo test3 > testFile
+echo "testFile modified, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+
+cd /usr
+echo "In /usr"
+rm testFile
+sleep 1
+touch testFile
+echo "testFile created, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+touch testFile
+echo "testFile touched, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
+sleep 1
+echo test3 > testFile
+echo "testFile modified, times:"
+stat -f "A = %Sa, M = %Sm, C = %Sc" testFile
