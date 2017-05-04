@@ -24,15 +24,3 @@ Operating Systems 605.412 Project 4: Modify Minix FS
 1. Program was created in personal VirtualBox Minix v3.3 VM, see [the github repo for a copy](https://github.com/1amBulletproof/OS_P4)
 
 
-
-Notes from Office Hours
-- There are 3 times maintained in inodes in MINIX:
-    - Ctime last change of the inode information (example: permissions) 
-        - Think about where you would find the time when the file was created...
-        - CLUE: upon creation all 3 file times are set....
-        - CLUE: simply prevent any other modification of CTIME after this...
-    - Atime (access time) - open file and read it
-    - MTime (modify time) - last time of file modification
-
-- TODO: look in MFS/VFS & look where information in inodes is being manipulated
-
