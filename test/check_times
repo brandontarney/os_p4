@@ -18,6 +18,10 @@ else
         echo test3 >> $1
         echo "testFile modified, times:"
         stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        chmod +x $1
+        echo "testFile permissions modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
         rm $1
 
         cd /home
@@ -35,6 +39,10 @@ else
         echo test3 >> $1
         echo "testFile modified, times:"
         stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        chmod +x $1
+        echo "testFile permissions modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
         rm $1
 
         cd /usr
@@ -51,6 +59,10 @@ else
         sleep 1
         echo test3 >> $1
         echo "testFile modified, times:"
+        stat -f "A = %Sa, M = %Sm, C = %Sc" $1
+        sleep 1
+        chmod +x $1
+        echo "testFile permissions modified, times:"
         stat -f "A = %Sa, M = %Sm, C = %Sc" $1
         rm $1
 fi
