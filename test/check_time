@@ -1,0 +1,2 @@
+#!/bin/sh
+stat -f "A = %Sa, M = %Sm, C = %Sc" $1
