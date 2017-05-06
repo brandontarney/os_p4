@@ -14,10 +14,10 @@ Operating Systems 605.412 Project 4: Modify Minix FS
 ## About the code
 1. **IDE:** VIM ftw
 1. **Important code:** 
- 1. Proj dir: /root/os/os_p3/
+ 1. Proj dir: /root/os/os_p4/
  1. driver_homework/homework/homework.c
 1. **How-to run:**
- 1. /root/os/os_p4/test/check_times <TestFileName>
+ 1. Test Part1 with script check_times: ( /root/os/os_p4/test/check_times <TestFileName> )
 1. **Input:** N/A
 1. **Output:** printf statements
 1. **Unit tests:** N/A
