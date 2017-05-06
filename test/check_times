@@ -1,6 +1,7 @@
-#!/bin/sh
-if ["$1" == ""]; then
-        echo "USEAGE: check_times <testFileName>"
+#!/usr/pkg/bin/bash
+if [ $# -eq 0 ] || [ $1 == "-h" ]; then
+        echo "PURPOSE:  This program will create a file in multiple directories and attempt to modify its 'a', 'm' and 'c' times through a variety of utilities"
+        echo "USEAGE:   check_times <testFileName>"
 else
         cd /root
         echo "In /root"
